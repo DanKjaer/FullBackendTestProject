@@ -29,6 +29,9 @@ jobs:
         with:
           dotnet-version: |
             8.0.x
+
+      - name: Get tests
+        run: git clone https://github.com/uldahlalex/newsapitests
         
       - name: Run the web API
         run: cd api && dotnet run & (sleep 20) && kill -9 $(lsof -t -i:5000)
