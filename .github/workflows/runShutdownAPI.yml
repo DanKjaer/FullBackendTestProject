@@ -29,12 +29,6 @@ jobs:
         with:
           dotnet-version: |
             8.0.x
-
-      - name: Create new web API
-        run: dotnet new webapi
         
       - name: Run the web API
-        run: cd FullBackendTestProject\api && dotnet run
-
-      - name: kill web API
-        run: (sleep 20) & kill -9 $(lsof -t -i:5000)
+        run: cd api && dotnet run & (sleep 20) && kill -9 $(lsof -t -i:5000)
