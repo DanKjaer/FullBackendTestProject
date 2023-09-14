@@ -32,3 +32,5 @@ jobs:
         
       - name: Run the web API
         run: cd api && dotnet run & (sleep 20) && kill -9 $(lsof -t -i:5000)
+        env:
+            pgconn: ${{secrets.pgconn}}
