@@ -31,7 +31,7 @@ jobs:
             8.0.x
 
       - name: Create new web API
-        run: dotnet new web API
+        run: dotnet new webapi
         
       - name: Run the web API
         run: cd FullBackendTestProject\api && dotnet run
