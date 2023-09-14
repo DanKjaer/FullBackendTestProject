@@ -28,4 +28,4 @@ jobs:
         run: cd FullBackendTestProject\api && dotnet run
 
       - name: kill web API
-        run: (sleep 20) kill -9 $(lsof -t -i:5000)
+        run: (sleep 20) & kill -9 $(lsof -t -i:5000)
