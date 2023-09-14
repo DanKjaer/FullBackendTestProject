@@ -34,6 +34,6 @@ jobs:
         run: git clone https://github.com/uldahlalex/newsapitests
         
       - name: Run the web API
-        run: cd api && dotnet run & (sleep 20) && kill -9 $(lsof -t -i:5000)
+        run: cd api && dotnet run & (sleep 20 && cd newsapitests && dotnet test) && kill -9 $(lsof -t -i:5000)
         env:
             pgconn: ${{secrets.pgconn}}
